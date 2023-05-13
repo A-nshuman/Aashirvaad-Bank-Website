@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="images/AB logo bigger.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Dashboard</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="dashboard.html"><img src="images/AB logo with text white.png" alt=""></a></div>
+            <input type="radio" name="slide" id="menu-btn">
+            <input type="radio" name="slide" id="cancel-btn">
+            <ul class="nav-links">
+                <div class="side-logo"><img src="images/AB logo with text white.png" alt=""></div>
+                <label for="cancel-btn" class="btn cancel-btn"><span>&times;</span></label>
+                <!-- <i class="fas fa-times"></i> -->
+                <li><a href="dashboard.html">Overview</a></li>
+
+                <li>
+                    <a href="loan.html" class="desktop-item">Loans</a>
+                    <input type="checkbox" id="showDrop">
+                    <label for="showDrop" class="mobile-item">Loans</label>
+                    <ul class="drop-menu">
+                        <li><a href="loan.html">Personal Loan</a></li>
+                        <li><a href="loan.html">Home Loan</a></li>
+                        <li><a href="loan.html">Car Loan</a></li>
+                        <li><a href="loan.html">Education Loan</a></li>
+                        <li><a href="loan.html">Healthcare Loan</a></li>
+                        <li><a href="loan.html">Gold Loan</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="remit.html">Remittance</a></li>
+                
+                <li>
+                    <a href="#" class="desktop-item">Services</a>
+                    <input type="checkbox" id="showMega">
+                    <label for="showMega" class="mobile-item">Services</label>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <img src="images/offer 1.png" alt="">
+                            </div>
+                            <div class="row">
+                                <header>Insurance</header>
+                                <ul class="mega-links">
+                                    <li><a href="insurance.html"><i class="fa-solid fa-heart-pulse"></i> Life Insurance</a></li>
+                                    <li><a href="insurance.html"><i class="fa-solid fa-suitcase-medical"></i> Health Insurance</a></li>
+                                    <li><a href="insurance.html"><i class="fa-solid fa-car-side"></i> Vehicle Insurance</a></li>
+                                    <li><a href="insurance.html"><i class="fa-solid fa-plane-departure"></i> Travel Insurance</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Invest</header>
+                                <ul class="mega-links">
+                                    <li><a href="fixed_dep.html"><i class="fa-solid fa-money-bill-1-wave"></i> Fixed Deposit</a></li>
+                                    <li><a href="rec_dep.html"><i class="fa-solid fa-money-bills"></i></i> Recurring Deposit</a></li>
+                                    <li><a href=""><i class="fa-solid fa-arrow-trend-up"></i> Invest in Stocks</a></li>
+                                    <li><a href="mut_fund.html"><i class="fa-solid fa-money-bill-transfer"></i> Mutual Funds</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>General</header>
+                                <ul class="mega-links">
+                                    <li><a href="#" id="down-btn"><i class="fa-solid fa-credit-card"></i> Credit/Debit Card</a></li>
+                                    <li><a href="consultant.html"><i class="fa-solid fa-user"></i> Consultant</a></li>
+                                    <li><a href="currency.html"><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i> Currency Exchange</a></li>
+                                    <li><a href=""><i class="fa-solid fa-percent"></i> Offers</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                <li><a href="#about">About</a></li>
+
+                <li><a href="index.html" class="logout-btn">Logout</a></li>
+
+            </ul>
+            <label for="menu-btn" class="btn menu-btn"><span>&equiv;</span></label>
+            <!-- <i class="fas fa-bars"></i> -->
+        </div>
+    </nav>
+
+            <!-- Popup -->
+            <div id="popup" class="popup">
+                <div class="popup-content1">
+                    <h2>Credit Card Application</h2>
+                    <p>Enjoy special offers with <span>Aashirvaad Bank</span> credit card<br><br>Please confirm your application</p>
+                    <button id="closePopup">Close</button>
+                    <button id="confirmPopup">Confirm</button>
+                </div>
+            </div>
+
+            <!-- Popup 2 -->
+            <div id="popup2" class="popup2">
+                <div class="popup-content">
+                    <h2>Successful</h2>
+                    <p>Your application was successful<br>Your card will be delivered soon</p>
+                    <button id="closePopup2">Close</button>
+                </div>
+            </div>
+
+            <!-- Popup 3 For Settings -->
+            <div id="popup3" class="popup3">
+                <div class="popup-content">
+                    <h2>Settings</h2>
+                    <p>This is the settings menu for tht website</p>
+                    <button id="closePopup3">Close</button>
+                    <button id="save-btn">Save</button>
+                </div>
+            </div>
+
+    <section class="overview">
+        <div class="container">
+
+            <h1>Hi, <span>{{Full Name}}</span></h1>
+            <p>What would you like to do today?</p>
+
+            <div class="cccc">
+                <div class="cards wel-card">
+                    <li><a href="">Account Summary</a></li>
+                    <li><a href="remit.html">Fund Transfer</a></li>
+                    <li><a href="#" id="settingsPopup">Settings</a></li>
+                </div>
+                <div class="cards bal-card">
+                    <h2>Account Balance</h2>
+                    <h3>₹ {{Balance}}</h3>
+                </div>
+            </div>
+
+            <div class="news">
+                <h1>Important</h1>
+                <div class="nhead">
+                    <div class="offers">
+                        <p>Offers</p>
+                        <ul>
+                            <li>Use <a>Aashirvaad Bank</a> credit card to get <span>₹ 3,000</span> voucher in amazon and flipkart</li>
+                            <li>Get <span>10%</span> discount on Samsung Products using <a>Aashirvaad Bank</a> Net Banking</li>
+                            <li>Book movie tickets using <a>Aashirvaad Bank</a> and get <span>one ticket free</span></li>
+                            <li>Save upto <span>20%</span> on air tickets using <a>Aadhirvaad Bank</a> Net Banking</li>
+                        </ul>
+                    </div>
+    
+                    <div class="line"></div>
+    
+                    <div class="noffers">
+                        <p>News</p>
+                        <ul>
+                            <li>Website opens at 1 April 2023</li>
+                            <li>FD Rates are now <span>7.1%</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <section class="container" id="about">
+            <div class="about">
+                <h3>About Us</h3>
+                <p>
+                    Aashirvaad bank is a financial innovation bank established on the preface that fundamental managing an account services ought to be supportive, simple and free. We need to benefit with our individuals, not benefit from them.
+                    We offer a wide extend of keeping money, items and financial administrations to corporate and retail clients through a assortment of conveyance channels.
+                </p>
+            </div>
+            <div class="contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i>  Location : Haryana, India</li>
+                    <li><i class="fa-solid fa-phone"></i>  Phone : +91 9252-19824</li>
+                    <li><i class="fa-solid fa-envelope"></i></i>  Gamil : aashirvaadbank@gmail.com</li>
+                </ul>
+            </div>
+        </section>
+        <section class="links">
+            <div class="tc"><a href="T and C.html", target="_blank">Terms & Conditions and Privacy Policy</a></div>
+        </section>
+        <section class="copyright">Copyright © Aashirvaad Bank 2023</section>
+    </footer>
+
+    <!-- script for card popup -->
+    <script>
+        document.getElementById("down-btn").addEventListener("click", function() {
+            showPopup();
+        });
+
+        document.getElementById("confirmPopup").addEventListener("click", function() {
+            showPopup2();
+        });
+
+        document.getElementById("settingsPopup").addEventListener("click", function() {
+            showPopup3();
+        });
+
+        document.getElementById("closePopup").addEventListener("click", function() {
+            closePopup();
+        });
+
+        document.getElementById("closePopup2").addEventListener("click", function() {
+            closePopup2();
+        });
+        
+        document.getElementById("closePopup3").addEventListener("click", function() {
+            closePopup3();
+        });
+
+        document.getElementById("save-btn").addEventListener("click", function() {
+            closePopup3();
+        });
+
+        function showPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
+
+        function showPopup2() {
+            var popup = document.getElementById("popup2");
+            popup.style.display = "block";
+
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+
+        function showPopup3() {
+            var popup = document.getElementById("popup3");
+            popup.style.display = "block";
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+
+        function closePopup2() {
+            var popup = document.getElementById("popup2");
+            popup.style.display = "none";
+        }
+
+        function closePopup3() {
+            var popup = document.getElementById("popup3");
+            popup.style.display = "none";
+        }
+    </script>
+    
+</body>
+</html>

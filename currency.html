@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Exchange</title>
+  <link rel="icon" href="images/AB logo bigger.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: khaki;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    nav{
+      background: rgb(255,119,34);
+      position: fixed;
+      z-index: 999;
+      height: 65px;
+      line-height: 65px;
+      position: relative;
+      max-width: 100%;
+      padding: 0 30px;
+      margin: auto;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+    }
+
+    nav img{
+      height: 60px;
+      padding: 3px 15px;
+    }
+
+    .goback {
+      font-size: 18px;
+      width: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+      transition: ease-in-out 0.2s;
+    }
+
+    .goback:hover{
+      color: black;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .currency-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .currency-form label{
+      display: flex;
+      align-items: center;
+    }
+
+    button{
+      background-color: black;
+      border-radius: 60px;
+      height: auto;
+      font-size: 17px;
+      padding: 10px;
+      color: white;
+      transition: 0.2s ease-in-out;
+    }
+
+    button:hover{
+      background-color: #fff;
+      color: black;
+    }
+
+    select,
+    input[type="number"] {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .convertedAmount{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        margin: 10px;
+        padding: 10px;
+      }
+
+      select,
+      input[type="number"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="dashboard.html" class="logo"><img src="images/AB logo with text white.png" alt="Bank Logo"></a>
+    <a href="dashboard.html" class="goback">&#8592; Back</a>
+  </nav>
+
+  <div class="container">
+    <h1>Currency Exchange</h1>
+
+    <div class="currency-form">
+      <label for="currencyFrom">Currency From:</label>
+      <select id="currencyFrom">
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="BHD">BHD - Bahraini Dinar</option>
+        <option value="USD">USD - United States Dollar</option>
+      </select>
+
+      <label for="currencyTo">Currency To:</label>
+      <select id="currencyTo">
+        <option value="INR">INR - Indian Rupee</option>
+        <option value="BHD">BHD - Bahraini Dinar</option>
+        <option value="USD">USD - United States Dollar</option>
+      </select>
+      
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" placeholder="Enter amount">
+      
+      <button type="submit">Convert</button>
+    </div>
+
+    <!-- <div class="conversion-result">
+    </div> -->
+
+    <div id="convertedAmount"></div>
+  </div>
+    
+    <script>
+      // Get DOM elements
+      const currencyFrom = document.getElementById('currencyFrom');
+      const currencyTo = document.getElementById('currencyTo');
+      const amountInput = document.getElementById('amount');
+      const convertButton = document.querySelector('button[type="submit"]');
+      const convertedAmountDiv = document.getElementById('convertedAmount');
+  
+      // Add event listener to the convert button
+      convertButton.addEventListener('click', () => {
+        const fromCurrency = currencyFrom.value;
+        const toCurrency = currencyTo.value;
+        const amount = amountInput.value;
+  
+        // Perform API call to get the conversion rate
+        fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`)
+          .then(response => response.json())
+          .then(data => {
+            const conversionRate = data.rates[toCurrency];
+            const convertedAmount = amount * conversionRate;
+  
+            // Display the converted amount
+            convertedAmountDiv.textContent = `Converted Amount: ${convertedAmount.toFixed(2)} ${toCurrency}`;
+          })
+          .catch(error => {
+            console.log('An error occurred:', error);
+            convertedAmountDiv.textContent = 'Conversion failed. Please try again.';
+          });
+      });
+    </script>
+  </body>
+  </html>
