@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+  
+/* ----------- Navbar Start ----------- */
+nav{
+    background: #ff7722;
+    position: fixed;
+    z-index: 999;
+    height: 65px;
+    line-height: 65px;
+    position: relative;
+    max-width: 100%;
+    padding: 0 30px;
+    margin: auto;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+  
+nav img{
+    height: 60px;
+    padding: 3px 15px;
+}
+  
+.goback {
+    font-size: 18px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    transition: ease-in-out 0.2s;
+}
+  
+.goback:hover{
+    color: black;
+}
+/* ----------- Navbar End ----------- */
+
+#summary{
+    background: khaki;
+    min-height: 100vh;
+}
+
+.statement-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.statement-table th, .statement-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.statement-table th {
+    background-color: #ff7722;
+    color: #fff;
+}
+
+.statement-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.statement-table tr:hover {
+    background-color: #ddd;
+}
+
+.time {
+    font-style: italic;
+}
+
+#summary h1{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    size: 30px;
+}
+
+
+/* Make the nav and summary sections stack on top of each other on smaller screens */
+@media (max-width: 395px) {
+    nav,
+    section#summary {
+      display: block;
+    }
+  
+    /* Hide the goback link on smaller screens */
+    .goback {
+      display: none;
+    }
+  
+    /* Make the statement table responsive */
+    table.statement-table {
+      width: 100%;
+    }
+  
+    /* Make the statement table header responsive */
+    table.statement-table thead tr {
+      display: none;
+    }
+  
+    /* Make the statement table body responsive */
+    table.statement-table tbody tr {
+      display: block;
+      width: 100%;
+    }
+  
+    /* Make the statement table body columns responsive */
+    table.statement-table tbody td {
+      display: block;
+      width: 100%;
+    }
+  
+    /* Make the statement table body column headers responsive */
+    table.statement-table tbody td:first-child {
+      font-weight: bold;
+    }
+  }
+  
