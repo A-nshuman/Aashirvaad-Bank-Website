@@ -5,140 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="icon" href="images/AB logo bigger.png">
+    <link rel="icon" href="{{ url_for('static', filename='images/AB logo bigger.png') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="remit.css">
+    <link rel="stylesheet" type="text/css" href="remit.css">
     <title>Remittance</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
     
     <nav>
-        <div class="wrapper">
-            <div class="logo"><a href="dashboard.html"><img src="images/AB logo with text white.png" alt=""></a></div>
-            <input type="radio" name="slide" id="menu-btn">
-            <input type="radio" name="slide" id="cancel-btn">
-            <ul class="nav-links">
-                <div class="side-logo"><img src="images/AB logo with text white.png" alt=""></div>
-                <label for="cancel-btn" class="btn cancel-btn"><span>&times;</span></label>
-                <!-- <i class="fas fa-times"></i> -->
-                <li><a href="dashboard.html">Overview</a></li>
-
-                <li>
-                    <a href="" class="desktop-item">Loans</a>
-                    <input type="checkbox" id="showDrop">
-                    <label for="showDrop" class="mobile-item">Loans</label>
-                    <ul class="drop-menu">
-                        <li><a href="">Personal Loan</a></li>
-                        <li><a href="">Home Loan</a></li>
-                        <li><a href="">Car Loan</a></li>
-                        <li><a href="">Education Loan</a></li>
-                        <li><a href="">Healthcare Loan</a></li>
-                        <li><a href="">Gold Loan</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="remit.html">Remittance</a></li>
-                
-                <li>
-                    <a href="" class="desktop-item">Services</a>
-                    <input type="checkbox" id="showMega">
-                    <label for="showMega" class="mobile-item">Services</label>
-                    <div class="mega-box">
-                        <div class="content">
-                            <div class="row">
-                                <img src="images/offer 1.png" alt="">
-                            </div>
-                            <div class="row">
-                                <header>Insurance</header>
-                                <ul class="mega-links">
-                                    <li><a href=""><i class="fa-solid fa-heart-pulse"></i> Life Insurance</a></li>
-                                    <li><a href=""><i class="fa-solid fa-suitcase-medical"></i> Health Insurance</a></li>
-                                    <li><a href=""><i class="fa-solid fa-car-side"></i> Vehicle Insurance</a></li>
-                                    <li><a href=""><i class="fa-solid fa-plane-departure"></i> Travel Insurance</a></li>
-                                </ul>
-                            </div>
-                            <div class="row">
-                                <header>Invest</header>
-                                <ul class="mega-links">
-                                    <li><a href=""><i class="fa-solid fa-money-bill-1-wave"></i> Fixed Deposit</a></li>
-                                    <li><a href=""><i class="fa-solid fa-money-bills"></i></i> Recurring Deposit</a></li>
-                                    <li><a href=""><i class="fa-solid fa-arrow-trend-up"></i> Invest in Stocks</a></li>
-                                    <li><a href=""><i class="fa-solid fa-money-bill-transfer"></i> Mutual Funds</a></li>
-                                </ul>
-                            </div>
-                            <div class="row">
-                                <header>General</header>
-                                <ul class="mega-links">
-                                    <li><a href=""><i class="fa-solid fa-credit-card"></i> Credit/Debit Card</a></li>
-                                    <li><a href=""><i class="fa-solid fa-user"></i> Consultant</a></li>
-                                    <li><a href=""><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i> Currency Exchange</a></li>
-                                    <li><a href=""><i class="fa-solid fa-percent"></i> Offers</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                
-                <li><a href="">About</a></li>
-
-                <li><a href="index.html" class="logout-btn">Logout</a></li>
-
-            </ul>
-            <label for="menu-btn" class="btn menu-btn"><span>&equiv;</span></label>
-            <!-- <i class="fas fa-bars"></i> -->
-        </div>
+        <a href="{{ url_for('dashboard') }}" class="logo"><img src="{{ url_for('static', filename='images/AB logo with text white.png') }}" alt="Bank Logo"></a>
+        <a href="{{ url_for('dashboard') }}" class="goback">&#8592; Back</a>
     </nav>
 
+    <form action="/remit" method="POST">
     <section class="remit">
-        <div class="container">
-            <div class="col">
-                <div class="row1">
-                    <div class="inputfield">
-                        <label>Account to</label>
-                        <input type="text" class="input">
+            <div class="container">
+                <div class="col">
+                    <div class="row1">
+                        <div class="inputfield">
+                            <label>Account to</label>
+                            <input type="text" name="acc" class="input" placeholder="Receiver's email" required>
+                        </div>
+            
+                        <div class="inputfield purpose">
+                            <label>Purpose</label>
+                            <div class="custom_select">
+                                <select>
+                                <option value="">Select</option>
+                                <option value="">Education</option>
+                                <option value="">Medical</option>
+                                <option value="">Gifting</option>
+                                <option value="">Donation</option>
+                                <option value="">Personal</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
         
-                    <div class="inputfield purpose">
-                        <label>Purpose</label>
-                        <div class="custom_select">
-                            <select>
-                            <option value="">Select</option>
-                            <option value="">option 1</option>
-                            <option value="">option 2</option>
-                            </select>
+                    <div class="row2">
+                        <div class="inputfield">
+                            <label>Amount</label>
+                            <input type="number" name="amount" class="input" required>
+                        </div>
+            
+                        <div class="inputfield">
+                            <label>Password</label>
+                            <input type="password" name="upwd" class="input" required>
                         </div>
                     </div>
                 </div>
-    
-                <div class="row2">
-                    <div class="inputfield">
-                        <label>Amount</label>
-                        <input type="text" class="input">
-                    </div>
-        
-                    <div class="inputfield">
-                        <label>Password</label>
-                        <input type="password" class="input">
-                    </div>
+                
+                <div class="narrative">
+                    <label>Narrative</label>
+                    <input class="input"></input>
                 </div>
+    
+                <div class="send-btn">
+                    <button><a href="{{ url_for('dashboard') }}">BACK</a></button>
+                    <button type="submit" onclick="openPopup()"><a href="">SEND</a></button>
+                </div>
+    
             </div>
             
-            <div class="narrative">
-                <label>Narrative</label>
-                <input class="input"></input>
-            </div>
+        </section>
+    </form>
 
-            <div class="send-btn">
-                <button><a href="dashboard.html">BACK</a></button>
-                <button type="submit"><a href="">SEND</a></button>
-            </div>
-
-        </div>
-    </section>
+    <script src="{{ url_for('static', filename='remit.js') }}"></script>
 
 </body>
 </html>

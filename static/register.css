@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
 
 *{
   margin: 0;
@@ -215,4 +215,191 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+} */
+* {
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  background: rgb(255, 119, 35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding-bottom: 20px;
+}
+
+h2 {
+  font-family: "Yatra One", cursive;
+  color: rgb(255, 119, 35);
+  font-size: 30px;
+}
+
+form {
+  background: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  border-radius: 10px;
+  padding: 20px 40px;
+  gap: 10px;
+}
+
+form input {
+  border-radius: 10px;
+  height: 30px;
+  border: 1px solid rgb(255, 119, 35);
+  padding-left: 10px;
+}
+
+form select {
+  border-radius: 10px;
+  border: 1px solid rgb(255, 119, 35);
+}
+
+.text_f {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.text_f .name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.text_f .name input {
+  width: 100%;
+}
+
+.text_f .nums {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.text_f .nums input {
+  width: 100%;
+}
+
+.text_f .nums select {
+  width: 70px;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-family: "Roboto", sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+.check a {
+  text-decoration: underline;
+  color: #4CAF50;
+  font-family: "Roboto", sans-serif;
+}
+
+.acc {
+  text-align: center;
+  font-size: 15px;
+}
+
+.acc a {
+  text-decoration: none;
+  color: #4CAF50;
+  font-family: "Roboto", sans-serif;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  width: 150px;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+button:hover, .btns .reg:hover, .btns .can:hover {
+  background: none;
+  scale: 1.15;
+}
+
+.btns .reg {
+  background: #4CAF50;
+}
+
+.btns .reg:hover {
+  border: 2px solid #4CAF50;
+}
+
+.btns .reg:hover a {
+  color: #4CAF50;
+}
+
+.btns .can {
+  background: crimson;
+}
+
+.btns .can:hover {
+  border: 2px solid crimson;
+  color: crimson;
+}
+
+.btns .can:hover a {
+  color: crimson;
+}
+
+.btns a {
+  text-decoration: none;
+  color: white;
+}
+
+.gender-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.label {
+  margin-right: 10px;
+}
+
+.option {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Responsive */
+@media (max-width: 583px) {
+  form {
+    border-radius: 0;
+  }
+}/*# sourceMappingURL=register.css.map */

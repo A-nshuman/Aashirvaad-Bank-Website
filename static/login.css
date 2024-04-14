@@ -1,10 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
-body{
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .login-page {
@@ -16,19 +15,16 @@ body{
   position: relative;
   z-index: 1;
   background: #FFFFFF;
-  /* max-width: 360px; */
   padding: 45px;
   padding-top: 35px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-.form h1{
-    font-family: 'Yatra One', cursive;
-    /* font-variant: small-caps;
-    font-style: italic; */
-    color: rgb(255, 119, 34);
-    font-size: 42px;
+.form h1 {
+  font-family: "Yatra One", cursive;
+  color: rgb(255, 119, 34);
+  font-size: 42px;
 }
 
 .form input {
@@ -43,11 +39,11 @@ body{
   font-size: 14px;
 }
 
-.form .btns{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
+.form .btns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
 }
 
 .form button {
@@ -63,27 +59,28 @@ body{
   transition: background 0.2s ease-in-out;
 }
 
-.form button a{
-    color: #FFFFFF;
-    text-decoration: none;
+.form button a {
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
-.form .login-btn{
+.form .login-btn {
   background: #4CAF50;
 }
 
-.form .cancel-btn{
-    background: crimson;
+.form .cancel-btn {
+  background: crimson;
 }
 
-.form button:hover a{
-    color: black;
+.form button:hover a {
+  color: black;
 }
 
-.form button:hover{
-    color: black;
-    background: rgba(127, 127, 127, 0.397);
-    backdrop-filter: blur(1.15);
+.form button:hover {
+  color: black;
+  background: rgba(127, 127, 127, 0.397);
+  -webkit-backdrop-filter: blur(1.15);
+          backdrop-filter: blur(1.15);
 }
 
 .form .message {
@@ -98,22 +95,21 @@ body{
 }
 
 body {
-    background: rgb(255,154,51);
-    background: linear-gradient(135deg, rgba(255,119,34,1) 0%, rgba(255,154,51,1) 67%, rgb(222, 176, 8) 100%);
-    font-family: "Roboto", sans-serif;
+  background: rgb(255, 154, 51);
+  background: linear-gradient(135deg, rgb(255, 119, 34) 0%, rgb(255, 154, 51) 67%, rgb(222, 176, 8) 100%);
+  font-family: "Roboto", sans-serif;
 }
 
-@media (max-width:500px){
-    .login-page {
-        width: 400px;
-    }
+@media (max-width: 500px) {
+  .login-page {
+    width: 400px;
+  }
 }
-
-@media (max-width:450px){
-    .login-page {
-        width: 300px;
-    }
-    .form h1{
-        font-size: 30px;
-    }
-}
+@media (max-width: 450px) {
+  .login-page {
+    width: 300px;
+  }
+  .form h1 {
+    font-size: 30px;
+  }
+}/*# sourceMappingURL=login.css.map */

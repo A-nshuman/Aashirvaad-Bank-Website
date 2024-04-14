@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,11 +7,11 @@
 
 /* General */
 
-li{
+li {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: #fff;
     font-size: 1.01rem;
@@ -22,116 +22,109 @@ a{
 
 /* ------------ Navbar Start ------------ */
 
-header{
+header {
     position: fixed;
     padding: 0.5rem 2rem;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
     width: 100%;
-}
+    z-index: 2;
 
-header.scroll{
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(1.15);
-}
+    .navbar {
+        width: 100%;
+        height: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.navbar{
-    width: 100%;
-    height: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    .links {
+        display: flex;
+        gap: 2rem;
 
-.navbar .links{
-    display: flex;
-    gap: 2rem;
-}
+        a {
+            transition: 0.2s ease-in-out;
+            font-size: 20px;
 
-.navbar .links a{
-    transition: 0.2s ease-in-out;
-    font-size: 20px;
-}
 
-.navbar .links a:hover{
-    color: rgb(255, 119, 34);
-}
+            &:hover {
+                color: rgb(255, 119, 34);
+            }
+        }
+    }
 
-.navbar .btns{
-    display: flex;
-    gap: 1rem;
-}
+    .btns {
+        display: flex;
+        gap: 1rem;
 
-.navbar .toggle-btn{
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-}
+        .navbar .mbl-btn {
+            background: white;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.1s ease-in-out;
+            border: 2px solid rgba(0, 0, 0, 0);
 
-.navbar .mbl-btn{
-    background: white;
-    color: #333;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.1s ease-in-out;
-    border: 2px solid rgba(0,0,0,0);
-}
+            &:hover {
+                border: 2px solid #fff;
+                color: #fff;
+                background: none;
+                scale: 1.15;
+            }
+        }
+    }
 
-.mbl-btn:hover{
-    border: 2px solid #fff;
-    color: #fff;
-    background: none;
-    scale: 1.15;
-}
-
-.mbl-btn:active{
-    scale: 0.95;
+    .toggle-btn {
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
 }
 
 /* Dropdown Navbar */
-.dropdown{
+.dropdown {
     display: none;
     position: absolute;
     right: 1rem;
     top: 70px;
     height: 0;
     width: 220px;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.dropdown.open{
+.dropdown.open {
     height: 240px;
 }
 
-.dropdown li{
+.dropdown li {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.dropdown li a{
+.dropdown li a {
     padding: 0.7rem;
     transition: 0.2s ease-in-out;
 }
 
-.dropdown li a:hover{
+.dropdown li a:hover {
     color: rgb(255, 119, 34);
 }
 
-.dropdown .btns{
+.dropdown .btns {
     padding: 0.3rem;
 }
 
-.dropdown .mbl-btn{
+.dropdown .mbl-btn {
     background: white;
     color: #333;
     padding: 0.5rem 1rem;
@@ -139,7 +132,7 @@ header.scroll{
     font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
-    border: 2px solid rgba(0,0,0,0);
+    border: 2px solid rgba(0, 0, 0, 0);
     width: 95%;
     display: flex;
     justify-content: center;
@@ -148,7 +141,7 @@ header.scroll{
     transition: 0.1s ease-in-out;
 }
 
-.dropdown .mbl-btn:hover{
+.dropdown .mbl-btn:hover {
     border: 2px solid #fff;
     color: #fff;
     background: none;
@@ -156,28 +149,29 @@ header.scroll{
 }
 
 /* Responsive Navbar */
-@media (max-width:1000px){
+@media (max-width:1000px) {
+
     .navbar .links,
-    .navbar .btns{
+    .navbar .btns {
         display: none;
     }
 
-    .navbar .toggle-btn{
+    .navbar .toggle-btn {
         display: block;
     }
 
-    .dropdown{
+    .dropdown {
         display: block;
     }
 }
 
-@media (max-width:540px){
-    .dropdown{
+@media (max-width:540px) {
+    .dropdown {
         left: 1rem;
         width: unset;
     }
 
-    .dropdown.open{
+    .dropdown.open {
         height: 240px;
     }
 }
@@ -186,15 +180,15 @@ header.scroll{
 
 
 /* ------------ Home Start ------------ */
-.home{
+.home {
     height: 100vh;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.6),rgba(4, 9, 30, 0.6)), url(https://wallpapercave.com/wp/wp4316550.jpg);
+    background-image: linear-gradient(rgba(4, 9, 30, 0.6), rgba(4, 9, 30, 0.6)), url(https://wallpapercave.com/wp/wp4316550.jpg);
     background-position: center;
     background-size: cover;
     padding-top: 80px;
 }
 
-.home .container{
+.home .container {
     padding: 40px 30px;
     display: flex;
     flex-direction: row;
@@ -202,7 +196,7 @@ header.scroll{
     /* background: blue; */
 }
 
-.home .container .advert{
+.home .container .advert {
     min-width: 600px;
     width: 600px;
     height: 470px;
@@ -212,11 +206,11 @@ header.scroll{
     overflow: hidden;
 }
 
-.home .consult .advert img{
+.home .consult .advert img {
     width: 100%;
 }
 
-.home .text-1{
+.home .text-1 {
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-top: 180px;
     color: white;
@@ -228,7 +222,7 @@ header.scroll{
     padding-top: 130px;
 }
 
-.home .text-1 img{
+.home .text-1 img {
     width: 500px;
     height: auto;
 }
@@ -240,7 +234,7 @@ header.scroll{
     transition: all 0.2s ease-in-out;
 } */
 
-.home .text-2{
+.home .text-2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 30px;
     font-weight: 100;
@@ -250,7 +244,7 @@ header.scroll{
     color: white;
 }
 
-.home .h-btns{
+.home .h-btns {
     display: flex;
     text-align: center;
     justify-content: center;
@@ -260,9 +254,9 @@ header.scroll{
     margin-right: 30px;
 }
 
-.home .h-btns .log-btn{
+.home .h-btns .log-btn {
     width: 150px;
-    background:yellow ;
+    background: yellow;
     color: #333;
     padding: 0.5rem 1rem;
     border-radius: 20px;
@@ -270,17 +264,17 @@ header.scroll{
     font-weight: bold;
     cursor: pointer;
     transition: 0.1s ease-in-out;
-    border: 2px solid rgba(0,0,0,0);
+    border: 2px solid rgba(0, 0, 0, 0);
 }
 
-.home .h-btns .log-btn:hover{
+.home .h-btns .log-btn:hover {
     border: 2px solid #fff;
     color: #fff;
     background: none;
     scale: 1.15;
 }
 
-.home .h-btns .reg-btn{
+.home .h-btns .reg-btn {
     width: 150px;
     background: rgb(255, 165, 0);
     color: #333;
@@ -290,10 +284,10 @@ header.scroll{
     font-weight: bold;
     cursor: pointer;
     transition: 0.1s ease-in-out;
-    border: 2px solid rgba(0,0,0,0);
+    border: 2px solid rgba(0, 0, 0, 0);
 }
 
-.home .h-btns .reg-btn:hover{
+.home .h-btns .reg-btn:hover {
     border: 2px solid #fff;
     color: #fff;
     background: none;
@@ -301,8 +295,8 @@ header.scroll{
 }
 
 /* responsive */
-@media (max-width:1240px){
-    .home .container{
+@media (max-width:1240px) {
+    .home .container {
         flex-direction: column;
         /* background-color: blue; */
         justify-content: center;
@@ -310,73 +304,77 @@ header.scroll{
         padding: 0 20px;
     }
 
-    .home .container .text-1{
+    .home .container .text-1 {
         padding-top: 90px;
     }
 
-    .home .container .advert{
+    .home .container .advert {
         margin: 40px 20px;
     }
 }
 
-@media (max-width:640px){
-    .home .container .advert{
+@media (max-width:640px) {
+    .home .container .advert {
         min-width: 500px;
         width: 500px;
         height: 390px;
     }
 
-    .home .container .advert img{
+    .home .container .advert img {
         width: 100%;
     }
 
-    .home .text-1 img{
+    .home .text-1 img {
         width: 400px;
         height: auto;
     }
 }
 
-@media (max-width:569px){
-    .home .text-1 span{
+@media (max-width:569px) {
+    .home .text-1 span {
         font-size: 60px;
     }
-    .home .text-2{
+
+    .home .text-2 {
         font-size: 25px;
     }
 
-    .home .container .advert{
+    .home .container .advert {
         min-width: 320px;
         width: 320px;
         height: 250px;
     }
 
-    .home .container .advert img{
+    .home .container .advert img {
         width: 100%;
     }
 
-    .home .text-1{
+    .home .text-1 {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .home .text-1 img{
+    .home .text-1 img {
         width: 300px;
         height: auto;
     }
 }
 
-@media (max-width:400px){
-    .home .text-1{
+@media (max-width:400px) {
+    .home .text-1 {
         font-size: 35px;
     }
-    .home .text-1 span{
+
+    .home .text-1 span {
         font-size: 40px;
     }
-    .home .text-2{
+
+    .home .text-2 {
         font-size: 20px;
     }
-    .home .h-btns{
+
+    .home .h-btns {
         gap: 20px;
         margin-left: 20px;
         margin-right: 20px;
@@ -388,7 +386,7 @@ header.scroll{
 
 /* ------------ Why Us Start ------------ */
 
-.whyus{
+.whyus {
     min-height: auto;
     background: burlywood;
     padding-top: 75px;
@@ -399,25 +397,26 @@ header.scroll{
     gap: 20px;
 }
 
-.whyus h1{
+.whyus h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 40px;
     text-align: center;
     color: black;
 }
 
-.whyus h5{
+.whyus h5 {
     text-align: justify;
     font-size: 20px;
     padding: 10px 70px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.whyus .para1 span, .para2 span{
+.whyus .para1 span,
+.para2 span {
     color: crimson;
 }
 
-.whyus .para2 a{
+.whyus .para2 a {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     text-decoration: underline;
@@ -425,23 +424,23 @@ header.scroll{
     transition: 0.1s ease-in-out;
 }
 
-.whyus .para2 a:hover{
+.whyus .para2 a:hover {
     text-decoration: none;
 }
 
-.whyus .para4 span{
+.whyus .para4 span {
     font-family: 'Yatra One', cursive;
     color: rgb(225, 119, 35);
 }
 
 /* Cards */
-.whyus h3{
+.whyus h3 {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 35px;
 }
 
-.reviews{
+.reviews {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -460,7 +459,24 @@ header.scroll{
     flex-direction: column;
     align-items: center;
     text-align: justify;
+    animation: fadeInWhyUs linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 500px;
 }
+
+@keyframes fadeInWhyUs {
+    from {
+        opacity: 0;
+        translate: 0 20%;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
 .whyus .card img {
     width: 150px;
     height: 150px;
@@ -468,11 +484,13 @@ header.scroll{
     border-radius: 50%;
     margin-bottom: 20px;
 }
+
 .whyus .card h2 {
     margin: 0;
     font-size: 24px;
     font-weight: bold;
 }
+
 .whyus .card p {
     margin: 10px 0 5px;
     font-size: 30px;
@@ -483,11 +501,13 @@ header.scroll{
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
-@media (max-width:890px){
-    .reviews{
+
+@media (max-width:890px) {
+    .reviews {
         flex-direction: column;
     }
-    .whyus h5{
+
+    .whyus h5 {
         padding: 10px 40px;
     }
 }
@@ -497,10 +517,10 @@ header.scroll{
 
 
 /* ------------ Services Start ------------ */
-.serv{
+.serv {
     min-height: 100vh;
     height: auto;
-    background:darkslateblue;
+    background: darkslateblue;
     padding-top: 75px;
     display: flex;
     gap: 30px;
@@ -509,22 +529,22 @@ header.scroll{
     align-items: center;
 }
 
-.serv h1{
+.serv h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 40px;
     text-align: center;
     color: white;
 }
 
-.serv p{
+.serv p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.serv p a{
+.serv p a {
     font-weight: 100;
 }
 
-.serv .container{
+.serv .container {
     max-width: 1250px;
     width: auto;
     height: auto;
@@ -532,7 +552,7 @@ header.scroll{
     margin-bottom: 50px;
 }
 
-.serv .container .card{
+.serv .container .card {
     height: 100%;
     width: 100%;
     display: flex;
@@ -547,7 +567,7 @@ header.scroll{
 .serv .container .card .credit,
 .serv .container .card .loan,
 .serv .container .card .fund-rem,
-.serv .container .card .consult{
+.serv .container .card .consult {
     height: 265px;
     /* height: auto; */
     width: 200px;
@@ -562,20 +582,40 @@ header.scroll{
     transition: all 0.2s linear;
 }
 
+.row1service {
+    animation: row1Fade linear;
+    animation-timeline: view();
+}
+
+.row2service {
+    animation: row1Fade linear reverse;
+    animation-timeline: view();
+}
+
+@keyframes row1Fade {
+    from {
+        translate: 50% 0;
+    }
+
+    to {
+        translate: -50% 0;
+    }
+}
+
 .serv .container .card .credit:hover,
 .serv .container .card .loan:hover,
 .serv .container .card .fund-rem:hover,
-.serv .container .card .consult:hover{
+.serv .container .card .consult:hover {
     border: 2px solid black;
     background-color: black;
 }
 
-.serv .container .card i{
+.serv .container .card i {
     margin: 20px 0;
     font-size: 100px;
 }
 
-.serv .container .card h4{
+.serv .container .card h4 {
     text-align: center;
     font-size: 20px;
     margin: 20px 0;
@@ -590,20 +630,21 @@ header.scroll{
 .serv .container .card .credit:hover h4,
 .serv .container .card .loan:hover h4,
 .serv .container .card .fund-rem:hover h4,
-.serv .container .card .consult:hover h4{
+.serv .container .card .consult:hover h4 {
     color: white;
 }
+
 /* ------------ Services End ------------ */
 
 
 /* ------------ Branches Start ------------ */
-.branches{
+.branches {
     min-height: 100vh;
     height: auto;
     background: darkkhaki;
 }
 
-.branches h1{
+.branches h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
     font-size: 40px;
@@ -612,7 +653,7 @@ header.scroll{
     padding-top: 80px;
 }
 
-.branches .img-holder{
+.branches .img-holder {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -624,7 +665,7 @@ header.scroll{
     height: 500px;
 }
 
-.map{
+.map {
     width: 100%;
     height: 100%;
     /* background: white; */
@@ -633,9 +674,25 @@ header.scroll{
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    animation: fadeInBranches linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 500px;
 }
 
-.map h4{
+@keyframes fadeInBranches {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.map h4 {
     text-align: center;
     border-top: 1px solid black;
     width: 90%;
@@ -643,26 +700,27 @@ header.scroll{
     scroll-snap-destination: 20px;
 }
 
-.map img{
+.map img {
     height: 85%;
 }
 
-@media (max-width:1190px){
-    .branches .img-holder{
+@media (max-width:1190px) {
+    .branches .img-holder {
         flex-direction: column;
         height: 700px;
     }
 
-    .branches h4{
+    .branches h4 {
         width: 50%;
     }
 }
 
-@media (max-width:640px){
-    .branches h4{
+@media (max-width:640px) {
+    .branches h4 {
         width: 90%;
     }
-    .branches .map img{
+
+    .branches .map img {
         width: 300px;
     }
 }
@@ -672,7 +730,7 @@ header.scroll{
 
 /* ------------ Mobile App Start ------------ */
 
-.mob-app{
+.mob-app {
     height: 100vh;
     background: burlywood;
     padding-top: 80px;
@@ -688,21 +746,21 @@ header.scroll{
     padding-right: 100px;
 } */
 
-.mob-app .text-1{
+.mob-app .text-1 {
     padding-left: 40px;
     font-size: 40px;
     padding-top: 100px;
     font-weight: 400;
 }
 
-.mob-app .text-1 span{
+.mob-app .text-1 span {
     font-variant: small-caps;
     color: rgb(255, 119, 35);
     /* font-style: italic; */
     font-family: 'Yatra One', cursive;
 }
 
-.mob-app .text-2{
+.mob-app .text-2 {
     padding-left: 40px;
     font-size: 20px;
     max-width: 600px;
@@ -710,27 +768,27 @@ header.scroll{
 }
 
 .mob-app .text-2 span,
-.mob-app .text-2 span a{
+.mob-app .text-2 span a {
     font-size: 10px;
 }
 
-.mob-app .text-2 span a{
+.mob-app .text-2 span a {
     color: crimson;
     text-decoration: underline;
 }
 
-.mob-app .down-btn{
+.mob-app .down-btn {
     margin-left: 40px;
     margin-top: 50px;
     background: crimson;
     padding: 10px 15px;
     border-radius: 40px;
-    border: 2px solid rgba(0,0,0,0);
+    border: 2px solid rgba(0, 0, 0, 0);
     cursor: pointer;
     width: fit-content;
 }
 
-.mob-app .down-btn p{
+.mob-app .down-btn p {
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -740,66 +798,86 @@ header.scroll{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.mob-app .down-btn p span{
+.mob-app .down-btn p span {
     padding-top: 0;
     font-size: 10px;
 }
 
-.mob-app .down-btn:hover{
+.mob-app .down-btn:hover {
     transition: 0.2s linear;
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     border-color: #333;
 }
 
-.mob-app .down-btn:hover p{
+.mob-app .down-btn:hover p {
     color: black;
 }
 
-.mob-app .app-img{
+.mob-app .app-img {
     padding-top: 50px;
     margin-right: 50px;
+    animation: appImgFade linear;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 500px;
 }
 
-.mob-app .app-img img{
-    height: 550px;
+.mob-app .app-img img {
+    height: 600px;
 }
 
-@media (max-width:1050px){
-    .mob-app{
+@keyframes appImgFade {
+    from {
+        opacity: 0;
+        translate: 40% 0;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@media (max-width:1050px) {
+    .mob-app {
         height: 100%;
         flex-direction: column;
     }
-    
-    .mob-app .text-1{
+
+    .mob-app .text-1 {
         padding-top: 60px;
         padding-right: 40px;
         text-align: center;
     }
 
-    .mob-app .text-2{
+    .mob-app .text-2 {
         padding-right: 40px;
     }
 
-    .mob-app .app-img{
+    .mob-app .app-img {
         text-align: center;
         margin-right: 0;
     }
 }
 
-@media (max-width:540px){
-    .mob-app .text-2{
+@media (max-width:540px) {
+    .mob-app .text-2 {
         font-size: 15px;
     }
 
-    .mob-app .app-img img{
+    .mob-app .app-img img {
         height: 400px;
     }
 }
 
-@media (max-width:330px){.mob-app .app-img img{height : 320px;}}
+@media (max-width:330px) {
+    .mob-app .app-img img {
+        height: 320px;
+    }
+}
 
 /* Popup */
-.popup{
+.popup {
     display: none;
     position: fixed;
     top: 0;
@@ -808,9 +886,9 @@ header.scroll{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
-  }
-  
-  .popup-content {
+}
+
+.popup-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -819,18 +897,18 @@ header.scroll{
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-  }
-  
-  .popup-content h2 {
+}
+
+.popup-content h2 {
     margin-top: 0;
-  }
-  
-  .popup-content p {
+}
+
+.popup-content p {
     margin-top: 10px;
     margin-bottom: 20px;
-  }
-  
-  .popup-content button {
+}
+
+.popup-content button {
     padding: 10px 20px;
     background-color: crimson;
     border: 2px solid crimson;
@@ -838,22 +916,22 @@ header.scroll{
     cursor: pointer;
     color: white;
     transition: 0.2s ease-in-out;
-  }
+}
 
-  .popup-content button:hover {
+.popup-content button:hover {
     padding: 10px 20px;
     background-color: white;
     border: 2px solid crimson;
     border-radius: 50px;
     cursor: pointer;
     color: crimson;
-  }
+}
 
-  @media(max-width:495px){
-    .popup-content{
+@media(max-width:495px) {
+    .popup-content {
         width: 80%;
     }
-  }
+}
 
 /* Popup end */
 
@@ -861,13 +939,13 @@ header.scroll{
 
 
 /* ------------ Footer/About Start ------------ */
-footer{
+footer {
     background-color: black;
     display: flex;
     flex-direction: column;
 }
 
-footer .container{
+footer .container {
     display: flex;
     gap: 30px;
     padding: 30px 30px;
@@ -875,7 +953,7 @@ footer .container{
     margin: 0 auto;
 }
 
-footer h3{
+footer h3 {
     margin-bottom: 15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 22px;
@@ -883,119 +961,119 @@ footer h3{
 }
 
 footer .about p,
-footer .contact li{
+footer .contact li {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-footer .about{
+footer .about {
     flex-grow: 1;
     flex-basis: 100%;
     color: #fff;
 }
 
-footer .contact{
+footer .contact {
     flex-grow: 1;
     flex-basis: 100%;
     color: #fff;
 }
 
-footer .contact ul{
+footer .contact ul {
     list-style: none;
     line-height: 1.8;
 }
 
-footer .social{
+footer .social {
     flex-grow: 1;
     flex-basis: 100%;
     color: #fff;
 }
 
-footer .social ul{
+footer .social ul {
     list-style: none;
     line-height: 2;
 }
 
-footer .social .twitter{
+footer .social .twitter {
     background: none;
     padding: 2.5px 5px;
     border-radius: 10px;
     transition: all 0.2s linear;
 }
 
-footer .social .twitter:hover{
+footer .social .twitter:hover {
     background: white;
     color: black;
 }
 
-footer .social .twitter:hover i{
+footer .social .twitter:hover i {
     color: #00acee;
 }
 
-footer .social .ig{
+footer .social .ig {
     background: none;
     padding: 2.5px 5px;
     border-radius: 10px;
     transition: all 0.2s linear;
 }
 
-footer .social .ig:hover{
+footer .social .ig:hover {
     background: white;
     color: black;
 }
 
-footer .social .ig:hover i{
+footer .social .ig:hover i {
     color: #c92bb7;
 }
 
-footer .social .ln{
+footer .social .ln {
     background: none;
     padding: 2.5px 5px;
     border-radius: 10px;
     transition: all 0.2s linear;
 }
 
-footer .social .ln:hover{
+footer .social .ln:hover {
     background: white;
     color: black;
 }
 
-footer .social .ln:hover i{
+footer .social .ln:hover i {
     color: #0A66C2;
 }
 
-footer .social .wb{
+footer .social .wb {
     background: none;
     padding: 2.5px 5px;
     border-radius: 10px;
     transition: all 0.2s linear;
 }
 
-footer .social .wb:hover i{
+footer .social .wb:hover i {
     color: #0A66C2;
 }
 
-footer .social .wb:hover{
+footer .social .wb:hover {
     background: white;
     color: black;
 }
 
-footer .social .gh{
+footer .social .gh {
     background: none;
     padding: 2.5px 5px;
     border-radius: 10px;
     transition: all 0.2s linear;
 }
 
-footer .social .gh:hover{
+footer .social .gh:hover {
     background: white;
     color: black;
 }
 
-footer .social .gh:hover i{
+footer .social .gh:hover i {
     color: black;
 }
 
-footer .links{
+footer .links {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1004,27 +1082,28 @@ footer .links{
     color: white;
 }
 
-footer .links a{
+footer .links a {
     font-weight: 100;
     font-size: 11px;
     opacity: 80%;
 }
 
-footer .links a:hover{
+footer .links a:hover {
     text-decoration: underline;
 }
 
-footer .copyright{
+footer .copyright {
     color: white;
-    border-top: 1px solid rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
     padding: 10px 0;
     display: grid;
     justify-content: center;
 }
 
-@media (max-width:800px){
-    footer .container{
+@media (max-width:800px) {
+    footer .container {
         flex-direction: column;
     }
 }
+
 /* ------------ Footer/About End ------------ */

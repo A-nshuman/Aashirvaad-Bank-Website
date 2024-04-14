@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{{ url_for('static', filename='images/AB logo bigger.png') }}">
+  <link rel="stylesheet" type="text/css" href="bal.css">
+  <title>Add Balance</title>
+</head>
+
+<body>
+  <nav>
+    <a href="dashboard.html" class="logo"><img src="images/AB logo with text white.png" alt="Bank Logo"></a>
+    <a href="dashboard.html" class="goback">&#8592; Back</a>
+  </nav>
+
+  <div class="container">
+    <h1>Add Balance</h1>
+    <form action="#" method="POST">
+      <div class="form-group">
+        <label for="name">Card Number:</label>
+        <input type="number" name="cardno" required>
+      </div>
+      <div class="form-group">
+        <label for="email">CVC:</label>
+        <input type="password" name="cvc" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Amount:</label>
+        <input type="number" name="amount" required>
+      </div>
+      <div class="form-group">
+        <label for="amount">Password:</label>
+        <input type="password" name="upwd" required>
+      </div>
+      <div class="btn">
+        <button>Cancel</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const popup = document.querySelector(".popup");
+    const detailsBtn = document.querySelector(".details-btn");
+    const applyNowBtn = document.querySelector(".apply-now-btn");
+    const closeBtns = document.querySelectorAll(".close-btn");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      // Process the form submission
+      // Show the thank you popup
+      popup.classList.add("open");
+    });
+
+    detailsBtn.addEventListener("click", function () {
+      // Show the details popup
+      popup.classList.add("open");
+    });
+
+    applyNowBtn.addEventListener("click", function () {
+      // Process the application
+      // Show the thank you popup
+      popup.classList.add("open");
+    });
+
+    closeBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        popup.classList.remove("open");
+      });
+    });
+  });
+  </script>
+</body>
+
+</html>

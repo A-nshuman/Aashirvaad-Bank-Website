@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loan Cards</title>
+  <link rel="stylesheet" href="">
+  <title>Stocks</title>
   <style>
     * {
       box-sizing: border-box;
@@ -12,40 +13,46 @@
       padding: 0;
     }
     /* Navbar */
-    nav{
-      background: rgb(255,119,34);
-      position: fixed;
-      z-index: 999;
-      height: 65px;
-      line-height: 65px;
-      position: relative;
-      max-width: 100%;
-      padding: 0 30px;
-      margin: auto;
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-    }
+    nav {
+			background: rgb(255, 119, 34);
+			position: fixed;
+			z-index: 999;
+			height: 65px;
+			line-height: 65px;
+			position: relative;
+			max-width: 100%;
+			padding: 0 20px;
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+		}
 
-    nav img{
-      height: 60px;
-      padding: 3px 15px;
-    }
+		nav img {
+      margin-top: 25px;
+			height: 70px;
+			padding: 5px;
+		}
 
-    .goback {
-      font-size: 18px;
-      width: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-decoration: none;
-      transition: ease-in-out 0.2s;
-    }
+		.goback {
+			font-size: 16px;
+			width: 100px;
+			height: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #fff;
+			text-decoration: none;
+			transition: ease-in-out 0.2s;
+			border-radius: 5px;
+		}
 
-    .goback:hover{
-      color: black;
-    }
+		.goback:hover {
+			background-color: #fff;
+			color: rgb(255, 119, 34);
+			text-decoration: none;
+		}
 
     /* Page content */
     body {
@@ -74,6 +81,10 @@
 
     .loan-details {
       margin-bottom: 20px;
+    }
+
+    .loan-details span{
+      font-weight: 800;
     }
 
     .apply-button {
@@ -106,9 +117,14 @@
       text-align: center;
     }
 
+    .popup-content p{
+      margin-top: 15px;
+    }
+
     .close-button {
       background-color: rgb(255, 119, 34);
       color: white;
+      margin-top: 20px;
       border: none;
       padding: 10px 20px;
       font-size: 16px;
@@ -135,44 +151,50 @@
   <!-- Page content -->
   <div class="loan-grid">
     <div class="loan-card">
-      <div class="loan-title">Personal Loan</div>
+      <div class="loan-title">Reliance Industries Limited </div>
       <div class="loan-details">
-        Get the financial support you need with our hassle-free Personal Loan options. Whether you're planning a dream vacation, a wedding, or need funds for any personal expense, our competitive interest rates and flexible repayment terms will make it easier for you to achieve your goals.
+        <span>Sector:</span> Conglomerate<br><br>
+        Reliance Industries is one of India's largest conglomerates with diverse interests in petrochemicals, refining, telecommunications, and retail. It's one of the largest companies by market capitalization in India.
       </div>
       <button class="apply-button">Apply Now</button>
     </div>
     <div class="loan-card">
-    <div class="loan-title">Home Loan</div>
+    <div class="loan-title">Infosys Limited</div>
     <div class="loan-details">
-      Turn your dream of owning a home into reality with our tailored Home Loan solutions. Our expert advisors will guide you through the process, helping you secure the perfect loan with favorable interest rates. With easy repayment options, you'll be moving into your new home sooner than you think.
+      <span>Sector:</span> Information Technology<br><br>
+      Infosys is a leading IT services company in India. It provides services such as consulting, application development, and outsourcing to clients worldwide.
     </div>
     <button class="apply-button">Apply Now</button>
     </div>
     <div class="loan-card">
-    <div class="loan-title">Car Loan</div>
+    <div class="loan-title">HDFC Bank Limited</div>
     <div class="loan-details">
-      Experience the joy of driving your dream car with our convenient Car Loan offerings. We understand the excitement of owning a vehicle, and our low-interest loans and quick approval process ensure that you hit the road without delay. Choose the repayment plan that suits you best and enjoy the convenience of easy EMIs.
+      <span>Sector:</span> Banking and Finance<br><br>
+      HDFC Bank is one of India's largest private sector banks. It offers a wide range of banking and financial products and services.
     </div>
     <button class="apply-button">Apply Now</button>
     </div>
     <div class="loan-card">
-    <div class="loan-title">Education Loan</div>
+    <div class="loan-title">Tata Motors Limited</div>
     <div class="loan-details">
-      Invest in your future with our Education Loan packages designed to support your academic aspirations. Whether you're pursuing higher studies within the country or abroad, our competitive interest rates and flexible repayment options will ease your financial burden and pave the way for your success.
+      <span>Sector:</span> Automobile<br><br>
+      Tata Motors is a well-known automobile manufacturer in India. It produces a range of vehicles, including passenger cars, commercial vehicles, and electric vehicles.
     </div>
     <button class="apply-button">Apply Now</button>
     </div>
     <div class="loan-card">
-    <div class="loan-title">Healthcare Loan</div>
+    <div class="loan-title">ICICI Bank Limited</div>
     <div class="loan-details">
-      Your health is a priority, and so is your peace of mind. Our Healthcare Loan options ensure that you or your loved ones receive the best medical care without financial stress. With our supportive loan plans, you can focus on recovery while we take care of the expenses.
+      <span>Sector:</span> Banking and Finance<br><br>
+      ICICI Bank is a prominent private sector bank in India. It provides a variety of banking services, including retail banking, corporate banking, and investment banking.
     </div>
     <button class="apply-button">Apply Now</button>
     </div>
     <div class="loan-card">
-    <div class="loan-title">Gold Loan</div>
+    <div class="loan-title">Maruti Suzuki India Limited</div>
     <div class="loan-details">
-      Unlock the potential of your gold assets with our Gold Loan services. When you need immediate funds for emergencies or opportunities, our secure and straightforward process allows you to borrow against your gold possessions. Benefit from transparent terms and quick disbursals to meet your financial needs with ease.
+      <span>Sector:</span> Automobile<br><br>
+      Maruti Suzuki is a leading car manufacturer in India. It's known for producing popular and affordable cars in the Indian market.
     </div>
     <button class="apply-button">Apply Now</button>
     </div>
@@ -182,7 +204,7 @@
       <div class="popup">
         <div class="popup-content">
           <h2>Thank you for applying!</h2>
-          <p>More details about the loan will be sent to your email.</p>
+          <p>Your request is further being processed</p>
           <button class="close-button">Close</button>
         </div>
       </div>
